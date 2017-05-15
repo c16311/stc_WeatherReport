@@ -1,0 +1,30 @@
+@startuml
+Interface Observer{
+    update
+}
+class NumberGenerator{
+    obervers
+    addObserver()
+    deleteObserver()
+    notifyObservers()
+    getNumber()
+    excute()
+}
+class TemperatureObserver{
+    update()
+}
+class WeatherObserver{
+    update()
+}
+
+class RandomNumberGenerator{
+    random
+    number
+    getNumber()
+    excute()
+}
+Observer <|.. TemperatureObserver
+Observer <|.. WeatherObserver
+NumberGenerator  <|-- RandomNumberGenerator
+Observer "Notifies  "<---o NumberGenerator
+@enduml
